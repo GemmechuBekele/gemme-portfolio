@@ -5416,11 +5416,8 @@ html.light-mode {
   display: flex;
   align-items: center;
   gap: 5px;
-
   padding: 5px;
-
   border-radius: 50px;
-
   background: color-mix(
     in srgb,
     var(--default-color),
@@ -5440,20 +5437,14 @@ html.light-mode {
 .accent-color-btn {
   width: 28px;
   height: 28px;
-
   padding: 0;
-
   border: none;
   border-radius: 50%;
-
   background: transparent;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   transition: all 0.25s ease;
 }
 

@@ -1,0 +1,1738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gemmechu's Portfolio</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: { extend: { colors: { accent: "var(--accent-color)" } } },
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-white"
+  >
+    <!-- Navigation -->
+    <header
+      id="header"
+      class="fixed inset-x-0 top-0 z-50 h-28 border-t border-slate-500/70 bg-white/95 shadow-md backdrop-blur-md dark:border-slate-800 dark:bg-[#101113]/95"
+    >
+      <div
+        class="mx-auto flex h-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10"
+      >
+        <!-- Color switch + dark mode -->
+        <div class="flex items-center gap-3">
+          <div
+            class="flex h-12 items-center gap-2 rounded-full border border-slate-500/70 bg-slate-200/20 px-2 shadow-inner dark:border-slate-600 dark:bg-slate-800/80"
+            aria-label="Accent color switcher"
+          >
+            <button
+              type="button"
+              class="accent-color-btn flex h-9 w-9 items-center justify-center rounded-full bg-[#ff4d4f] ring-2 ring-white/30 transition hover:scale-105"
+              data-accent="#ff4d4f"
+              aria-label="Red accent"
+              title="Red"
+            >
+              <span class="h-full w-full rounded-full"></span>
+            </button>
+            <button
+              type="button"
+              class="accent-color-btn flex h-9 w-9 items-center justify-center rounded-full bg-[#38BDF8] transition hover:scale-105"
+              data-accent="#38BDF8"
+              aria-label="Blue accent"
+              title="Blue"
+            >
+              <span class="h-full w-full rounded-full"></span>
+            </button>
+          </div>
+
+          <button
+            type="button"
+            id="theme-toggle"
+            class="group flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30 dark:border-white/15 dark:bg-white/10 dark:hover:bg-white/15"
+            aria-label="Toggle dark and light mode"
+            title="Toggle theme"
+          >
+            <span
+              id="theme-icon"
+              class="flex h-8 w-8 items-center justify-center text-[21px] leading-none transition-transform duration-200 group-hover:rotate-12"
+              >🔆</span
+            >
+          </button>
+        </div>
+
+        <!-- Desktop navigation -->
+        <nav id="navmenu" class="hidden lg:block">
+          <ul class="flex items-center gap-9">
+            <li>
+              <a
+                href="#hero"
+                class="nav-link active text-xl font-medium text-accent transition hover:text-accent"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="nav-link text-xl font-medium text-slate-800 transition hover:text-accent dark:text-slate-200"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#resume"
+                class="nav-link text-xl font-medium text-slate-800 transition hover:text-accent dark:text-slate-200"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="nav-link text-xl font-medium text-slate-800 transition hover:text-accent dark:text-slate-200"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="nav-link text-xl font-medium text-slate-800 transition hover:text-accent dark:text-slate-200"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="rounded-full bg-accent px-8 py-3 text-lg font-medium text-white shadow-md transition hover:opacity-90"
+                >Hire me</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile menu -->
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-300 text-xl text-slate-700 lg:hidden dark:border-slate-700 dark:text-slate-200"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-slate-200 bg-white px-5 py-4 dark:border-slate-800 dark:bg-[#101113] lg:hidden"
+      >
+        <nav>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#hero"
+                class="block rounded-lg px-4 py-3 font-medium text-accent hover:bg-slate-100 dark:hover:bg-slate-900"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#resume"
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block rounded-lg bg-accent px-4 py-3 text-center font-medium text-white"
+                >Hire me</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main pt-28">
+      <section
+        id="projects"
+        class="min-h-screen bg-slate-50 py-16 dark:bg-slate-950"
+      >
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mx-auto mb-10 max-w-3xl text-center">
+            <span
+              class="text-sm font-bold uppercase tracking-[0.25em] text-accent"
+              >My Work</span
+            >
+            <h1
+              class="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            >
+              Projects
+            </h1>
+            <p class="mt-4 text-slate-600 dark:text-slate-400">
+              A collection of projects across mobile, frontend, full-stack,
+              backend, database, algorithms, and DevOps development.
+            </p>
+          </div>
+          <div
+            id="project-filters"
+            class="mb-10 flex flex-wrap justify-center gap-2"
+          >
+            <button
+              class="filter-btn active rounded-full border border-accent bg-accent px-5 py-2 text-sm font-semibold text-white shadow-md "
+              data-filter="all"
+            >
+              All</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="mobile-development"
+            >
+              Mobile</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="frontend-development"
+            >
+              Frontend</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="full-stack-development"
+            >
+              Full Stack</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="backend-development"
+            >
+              Backend</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="database"
+            >
+              Database</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="algorithms-and-problem-solving"
+            >
+              DSA</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="devops"
+            >
+              DevOps</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="web-development"
+            >
+              Web</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="documentation"
+            >
+              Documentation</button
+            ><button
+              class="filter-btn rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 hover:border-accent hover:text-accent dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-white"
+              data-filter="tools-and-collaboration"
+            >
+              Tools
+            </button>
+          </div>
+          <div
+            id="projects-grid"
+            class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="mobile-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Mobile Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Mobile Wallet
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Dart • Flutter
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Mobile-banking-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="mobile-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Mobile Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                JobLink
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Dart • Flutter
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/JobLink-App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="mobile-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Mobile Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Mobile Banking
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Dart • Flutter
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/mobile-banking-app-my-wallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Grand Hotel
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Grand-Hotel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Analog Clock
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind Tailwind CSS • JavaScript
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/analog_clock"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Todo List
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind Tailwind CSS • JavaScript
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/todo-list"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Mini Profile Card
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/mini-profile-card"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Responsive Demo Page
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Responsive-demo--page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Puppy Page
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/puppy-page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Apple Practice Page
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Apple-page-for-Practice"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="frontend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Frontend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Basic Calculator
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind Tailwind CSS • JavaScript
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Basic-Calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                E-commerce App
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                TypeScript
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/ecommerce-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                E-commerce Platform
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python • Web
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/e-commerce-platform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Ecomsite
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><span class="text-sm font-semibold text-slate-400"
+                  >GitHub link coming soon</span
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Ecomsite Project Nexus
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><span class="text-sm font-semibold text-slate-400"
+                  >GitHub link coming soon</span
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Travel App
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx_travel_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Travel App 0x00
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx_travel_app_0x00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Travel App 0x01
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx_travel_app_0x01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Airbnb Clone
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/airbnb-clone-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="full-stack-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Full-Stack Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Telemedicine Application
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/telemedicine-application"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="backend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Backend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Profiles REST API
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python • REST API
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/profiles-rest-api"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="backend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Backend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                REST API Project
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                REST API
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Rest-API-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="backend-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Backend Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                ALX Backend Python
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx-backend-python"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="database"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Database</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Airbnb Database
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                SQL • Database
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx-airbnb-database"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="database"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Database</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Database Design Project
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python • Database
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/wk-8-database-design-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                A2SV Solved Questions
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python • DSA
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/A2SV_Solved_Questions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Python Projects
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/practice-python-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                OOP Challenge
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python • OOP
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/OOP-Challenge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Python Quiz
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/python-quiz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Password Generator
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/password-generator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="algorithms-and-problem-solving"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Algorithms & Problem Solving</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Basic Calculator Program
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Basic-Calculator-Program"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="devops"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >DevOps</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                ALX System Engineering & DevOps
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Shell • Linux • DevOps
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx-system_engineering-devops"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="devops"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >DevOps</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                ALXprodev DevOps
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Shell • DevOps
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/ALXprodev-Devops"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="tools-and-collaboration"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Tools & Collaboration</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Git Workflow
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Git • GitHub
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/git-work-flow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="web-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Web Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Web Development Group
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Web-Development-Group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="web-development"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Web Development</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Hackathon Project
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                HTML • Tailwind CSS
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/Hackathon-Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="documentation"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Documentation</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                ALX Project Nexus
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Python
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx-project-nexus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="project-card group rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              data-category="documentation"
+            >
+              <div class="mb-5 flex items-center justify-between">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-xl text-accent dark:bg-red-950/30"
+                >
+                  ✦
+                </div>
+                <span
+                  class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                  >Documentation</span
+                >
+              </div>
+              <h3 class="mb-2 text-xl font-bold text-slate-900 dark:text-white">
+                Airbnb Project Documentation
+              </h3>
+              <p class="mb-6 text-sm text-slate-500 dark:text-slate-400">
+                Documentation
+              </p>
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800"
+              >
+                <span class="text-xs uppercase tracking-wider text-slate-400"
+                  >Project</span
+                ><a
+                  href="https://github.com/GemmechuBekele/alx-airbnb-project-documentation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      id="footer"
+      class="border-t border-slate-200 py-8 text-center dark:border-slate-800"
+    >
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        © Copyright
+        <strong class="px-1 text-slate-900 dark:text-white">Gemmechu</strong>
+        All Rights Reserved
+      </p>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="fixed bottom-6 right-6 hidden h-11 w-11 items-center justify-center rounded-full bg-accent text-xl text-white shadow-lg"
+      >↑</a
+    >
+
+    <!-- Preloader -->
+
+    <!-- Main JS File -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const b = document.querySelectorAll(".filter-btn"),
+          c = document.querySelectorAll(".project-card");
+        b.forEach((x) =>
+          x.addEventListener("click", () => {
+            b.forEach((y) => {
+              y.classList.remove(
+                "active",
+                "bg-accent",
+                "text-white",
+                "border-accent",
+              );
+              y.classList.add("bg-white", "text-slate-600");
+            });
+            x.classList.add(
+              "active",
+              "bg-accent",
+              "text-white",
+              "border-accent",
+            );
+            x.classList.remove("bg-white", "text-slate-600");
+            const f = x.dataset.filter;
+            c.forEach(
+              (y) =>
+                (y.style.display =
+                  f === "all" || y.dataset.category === f ? "" : "none"),
+            );
+          }),
+        );
+      });
+    </script>
+
+    <script>
+      const root = document.documentElement;
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+      const mobileToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      function setTheme(dark) {
+        root.classList.toggle("dark", dark);
+        themeIcon.textContent = dark ? "☾" : "🔆";
+        localStorage.setItem("theme", dark ? "dark" : "light");
+      }
+
+      function setAccent(color, button) {
+        root.style.setProperty("--accent-color", color);
+        document.querySelectorAll(".accent-color-btn").forEach((b) => {
+          b.classList.remove("ring-2", "ring-white");
+        });
+        button.classList.add("ring-2", "ring-white");
+        localStorage.setItem("accent", color);
+      }
+      setTheme(localStorage.getItem("theme") === "dark");
+      themeToggle.addEventListener("click", () =>
+        setTheme(!root.classList.contains("dark")),
+      );
+
+      const savedAccent = localStorage.getItem("accent") || "#ff4d4f";
+      const savedAccentButton =
+        [...document.querySelectorAll(".accent-color-btn")].find(
+          (btn) => btn.dataset.accent === savedAccent,
+        ) || document.querySelector(".accent-color-btn");
+      setAccent(savedAccent, savedAccentButton);
+
+      document.querySelectorAll(".accent-color-btn").forEach((btn) => {
+        btn.addEventListener("click", () => setAccent(btn.dataset.accent, btn));
+      });
+
+      mobileToggle.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden"),
+      );
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((link) =>
+          link.addEventListener("click", () =>
+            mobileMenu.classList.add("hidden"),
+          ),
+        );
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((l) => l.classList.remove("text-accent"));
+          link.classList.add("text-accent");
+        });
+      });
+    </script>
+  </body>
+</html>
